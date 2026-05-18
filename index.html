@@ -98,17 +98,6 @@ hr.divider {
 }
 .hero-cta { margin-bottom: 64px; animation: fadeUp 0.5s 0.16s ease both; }
 
-.btn-discover {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 11px 22px;
-  background: var(--black); color: var(--white);
-  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9rem;
-  border-radius: 50px; text-decoration: none; border: none; cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-  white-space: nowrap;
-}
-.btn-discover:hover { background: #222; transform: translateY(2px); }
-.btn-discover .btn-arrow { background: rgba(255,255,255,0.12); }
 
 .feature-cards {
   display: grid; grid-template-columns: repeat(3,1fr); gap: 14px;
@@ -195,8 +184,62 @@ hr.divider {
 .banner-btn:hover { background: var(--purple-dark); }
 .banner-pills { display: flex; justify-content: center; gap: 10px; margin-top: 32px; flex-wrap: wrap; }
 .banner-pill { padding: 7px 18px; border: 1px solid rgba(255,255,255,0.22); border-radius: 50px; font-size: 0.8rem; color: rgba(255,255,255,0.8); }
-.banner-url { margin-top: 24px; font-size: 0.8rem; color: rgba(255,255,255,0.38); }
-.banner-url a { color: rgba(255,255,255,0.55); text-decoration: underline; text-underline-offset: 3px; }
+.banner-url { margin-top: 28px; font-size: 1rem; color: rgba(255,255,255,0.7); }
+.banner-url a { color: #fff; font-weight: 700; font-size: 1.05rem; text-decoration: underline; text-underline-offset: 4px; letter-spacing: 0.01em; }
+.banner-url a:hover { opacity: 0.85; }
+/* ── CTA BUTTONS ── */
+.btn-cta {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 15px 32px; background: var(--purple); color: var(--white);
+  font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1rem;
+  border-radius: 50px; text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 18px rgba(151,71,255,0.3);
+}
+.btn-cta:hover { background: var(--purple-dark); transform: translateY(-2px); box-shadow: 0 7px 26px rgba(151,71,255,0.45); }
+.btn-cta-ghost {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 28px; background: transparent; color: var(--teal-label);
+  border: 2px solid var(--teal-label);
+  font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.95rem;
+  border-radius: 50px; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-cta-ghost:hover { background: var(--teal-label); color: #fff; transform: translateY(-2px); }
+.btn-cta-final {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 18px 44px; background: var(--purple); color: var(--white);
+  font-family: 'DM Sans', sans-serif; font-weight: 800; font-size: 1.1rem;
+  border-radius: 50px; text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 6px 28px rgba(151,71,255,0.4);
+}
+.btn-cta-final:hover { background: var(--purple-dark); transform: translateY(-3px); box-shadow: 0 10px 36px rgba(151,71,255,0.55); }
+.cta-bridge { text-align: center; padding: 72px 48px; border-top: 1px solid var(--card-border); }
+.cta-bridge p { font-size: 1rem; color: var(--gray-500); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.65; }
+/* form section — fondo negro, layout split */
+#contacto { background: var(--black); }
+#contacto .label-tag { color: var(--purple); }
+.contacto-split {
+  display: grid; grid-template-columns: 1fr 1.45fr;
+  gap: 80px; align-items: start; padding: 80px 0;
+}
+.contacto-text { padding-top: 12px; }
+.contacto-subheading {
+  font-size: 1.05rem; font-weight: 700;
+  color: rgba(255,255,255,0.8); margin-bottom: 16px;
+}
+.contacto-desc {
+  font-size: 0.95rem; color: rgba(255,255,255,0.48);
+  line-height: 1.8;
+}
+
+/* iframe JotForm */
+#JotFormIFrame-250447313350044 { width: 100%; border: none; display: block; }
+/* link after form */
+.post-form-link { text-align: center; padding: 32px 48px; background: var(--black); color: #fff; font-size: 0.9rem; }
+.post-form-link a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.post-form-link a strong { color: #fff; font-weight: 700; }
 
 /* ── FOOTER ── */
 footer { background: var(--black); color: var(--white); padding: 64px 48px 36px; overflow: hidden; width: 100%; }
@@ -312,7 +355,6 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
   .hero h1 { font-size: clamp(1.9rem, 7vw, 2.6rem); margin-bottom: 16px; }
   .hero-sub { font-size: 0.93rem; margin-bottom: 28px; }
   .hero-cta { margin-bottom: 40px; }
-  .btn-discover { font-size: 0.85rem; padding: 10px 18px; width: 100%; justify-content: center; }
   .feature-cards { grid-template-columns: 1fr; gap: 10px; }
   .feature-card { padding: 24px 20px; }
   .feature-card .big-num { font-size: 1.8rem; }
@@ -340,6 +382,12 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
   .footer-bottom { flex-direction: column; gap: 6px; text-align: center; }
   .narr-block { font-size: 0.93rem; }
   .narr-block.large { font-size: 1rem; }
+  .btn-cta, .btn-cta-final { width: 100%; justify-content: center; }
+  .cta-bridge { padding: 48px 24px; }
+  .cta-bridge p { font-size: 0.9rem; }
+  .contacto-split { grid-template-columns: 1fr; gap: 36px; padding: 48px 0; }
+  .contacto-card { padding: 28px 20px; }
+  .post-form-link { padding: 24px 20px; }
 }
 </style>
 </head>
@@ -354,40 +402,7 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
     </svg>
   </a>
 
-  <ul class="nav-links">
-    <li><a href="https://tribuemprendedores.com/web/" target="_blank" data-term="nav_nosotros">Nosotros</a></li>
-    <li><a href="https://tribuemprendedores.com/web/" target="_blank" data-term="nav_solucion">Nuestra Solución</a></li>
-    <li><a href="https://tribuemprendedores.com/web/metodologia-de-implementacion-tribu.html" target="_blank" data-term="nav_metodologia">Metodología</a></li>
-  </ul>
-
-  <a href="https://tribuemprendedores.com/web/#contact" class="btn-primary" target="_blank" data-term="nav_cta">
-    Agenda una demo
-    <span class="btn-arrow">
-      <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-        <path d="M2 7h10M7 2l5 5-5 5" stroke="#9747FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-  </a>
-
-  <button class="hamburger" id="hamburger" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
-
-<!-- Menú móvil -->
-<div class="mobile-menu" id="mobile-menu">
-  <a href="https://tribuemprendedores.com/web/" target="_blank" data-term="mob_nosotros">Nosotros</a>
-  <a href="https://tribuemprendedores.com/web/" target="_blank" data-term="mob_solucion">Nuestra Solución</a>
-  <a href="https://tribuemprendedores.com/web/metodologia-de-implementacion-tribu.html" target="_blank" data-term="mob_metodologia">Metodología</a>
-  <a href="https://tribuemprendedores.com/web/#contact" class="btn-primary" target="_blank" data-term="mob_cta">
-    Agenda una demo
-    <span class="btn-arrow">
-      <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-        <path d="M2 7h10M7 2l5 5-5 5" stroke="#9747FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </span>
-  </a>
-</div>
 
 
 <!-- ══════════════════════════════════════════════
@@ -400,6 +415,16 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
         <span class="label-tag">Inteligencia Artificial · Tribu Emprendedores</span>
         <h1>De conversar con IA<br>a operar con IA</h1>
         <p>Muchos profesionales ya encontraron en la inteligencia artificial una nueva forma de trabajar. Y lo más interesante es que no lo ven como algo lejano o complicado: ya lo integraron a su día a día.</p>
+        <div style="margin-top:32px;">
+          <a href="#imagina" class="btn-cta">
+            Descubre lo que sigue
+            <span class="btn-arrow">
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="#9747FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
       </div>
       <div class="hero-split-img">
         <!--
@@ -408,11 +433,12 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
           Sugerencia: profesional usando chat de IA en laptop,
           o ilustración que muestre conversación + trabajo.
         -->
-        <img src="hero-main.png" alt="De conversar con IA a operar con IA - Tribu">
+        <img src="hero-main.webp" alt="De conversar con IA a operar con IA - Tribu" width="600" height="500" fetchpriority="high">
       </div>
     </div>
 
     <!-- Usos cotidianos: "La usan para escribir mejores correos..." -->
+    <p style="font-size:0.72rem; font-weight:700; letter-spacing:0.13em; text-transform:uppercase; color:var(--gray-500); margin-bottom:16px;">Lo que ya hacemos mejor con IA</p>
     <div class="feature-cards">
       <div class="feature-card">
         <div class="card-icon">✉️</div>
@@ -434,59 +460,12 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
       </div>
     </div>
 
-    <!-- Botón CTA después de las cards -->
-    <div style="margin-top: 32px;">
-      <a href="#descubrimiento" class="btn-discover">
-        Descubre lo que sigue
-        <span class="btn-arrow">
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-            <path d="M7 2v10M3 8l4 4 4-4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </a>
-    </div>
-
   </div>
 </div>
 
 <hr class="divider">
 
 
-<!-- ══════════════════════════════════════════════
-     SECCIÓN 2 — EL DESCUBRIMIENTO
-     "Cada conversación con ChatGPT, Claude o Gemini...
-      Ese descubrimiento abrió una nueva puerta."
-     ══════════════════════════════════════════════ -->
-<section id="descubrimiento">
-  <div class="page-max">
-    <div class="section">
-      <span class="label-tag">El Descubrimiento</span>
-      <h2 class="section-title">El contexto convierte<br>a la IA en una ventaja</h2>
-
-      <!--
-        IMAGEN BANNER ANCHO
-        Tamaño ideal: 1160 × 340 px (panorámica)
-        Sugerencia: profesionales trabajando con pantallas de IA,
-        ambiente de trabajo moderno, laptops con interfaces de chat.
-      -->
-      <div class="banner-img">
-        <img src="banner-descubrimiento.png" alt="Profesionales usando IA en su día a día">
-      </div>
-
-      <p class="narr-block">
-        Cada conversación con ChatGPT, Claude, Gemini o cualquier otro modelo, les demuestra algo importante: cuando la IA tiene buen contexto, puede ayudar a pensar mejor, ordenar información y acelerar decisiones.
-      </p>
-      <p class="narr-block large">
-        Ese descubrimiento abrió una nueva puerta.
-      </p>
-      <p class="narr-block">
-        Porque si una herramienta de IA puede ayudarte tanto desde una interfaz de chat, imagina lo que podría hacer cuando se diseña alrededor de los procesos reales de tu empresa.
-      </p>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
 
 
 <!-- ══════════════════════════════════════════════
@@ -518,66 +497,14 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
           <p>Una IA que deja de ser solo una herramienta que acompaña a una persona y empieza a convertirse en <strong>una extensión inteligente de la operación.</strong></p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 
 <!-- ══════════════════════════════════════════════
-     SECCIÓN 4 — EL EJEMPLO REAL
-     "Por ejemplo: llega un mensaje por WhatsApp..."
-     Flujo completo: contacto → calificación → escalamiento
-     ══════════════════════════════════════════════ -->
-<section id="ejemplo">
-  <div class="page-max">
-    <div class="section">
-      <span class="label-tag">Un ejemplo real</span>
-      <h2 class="section-title">Así se ve en<br>tu proceso comercial</h2>
-      <p class="section-sub">Desde el primer mensaje hasta que tu equipo toma la conversación — con todo el contexto listo.</p>
-
-      <div class="method-split">
-        <div class="method-split-img">
-          <!--
-            IMAGEN SPLIT IZQUIERDA
-            Tamaño ideal: 540 × 520 px (vertical o cuadrada)
-            Sugerencia: diagrama o flujo visual:
-            WhatsApp / redes / web → IA → equipo comercial.
-            Puede ser captura de tus slides o diseño propio.
-          -->
-          <img src="flujo-comercial.png" alt="Flujo comercial con IA - Tribu">
-        </div>
-        <div class="method-split-cards">
-          <div class="step-card">
-            <span class="step-num">01 — Reglas de negocio</span>
-            <h3>Entiende tus reglas de negocio 🧠</h3>
-            <p>No solo redacta; resuelve consultas transaccionales cómo por ejemplo, duda de tu programa lealtad y puntos al instante (80% de automatización), tal como lo hace el Agente G en el sector gasolinero.</p>
-          </div>
-          <div class="step-card">
-            <span class="step-num">02 — Captura automática</span>
-            <h3>Elimina la captura manual ⚙️</h3>
-            <p>Estructura datos desde PDFs, Excels o WhatsApp directamente a tu sistema operativo, reduciendo el tiempo de "Data Entry" en un 90% como en el Caso Aduanera.</p>
-          </div>
-          <div class="step-card">
-            <span class="step-num">03 — Validación operativa</span>
-            <h3>Detecta omisiones al instante 🔎</h3>
-            <p>Identifica automáticamente si falta información en un expediente de comercio exterior y la solicita al cliente, liberando +400 horas al mes como en la Empresa Logística.</p>
-          </div>
-          <div class="step-card">
-            <span class="step-num">04 — Ejecución 24/7</span>
-            <h3>Una extensión de tu equipo 🚀</h3>
-            <p>Deja de ser un "chat de ayuda" para ejecutar acciones 24/7 que garantizan la integridad de la información y aceleran los ciclos de ingreso de tu operación real.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-
-<!-- ══════════════════════════════════════════════
-     SECCIÓN 5 — TRIBU + CIERRE
+     SECCIÓN 4 — TRIBU + CIERRE
      "En Tribu Emprendedores diseñamos soluciones..."
      "La siguiente etapa... Lo amplifica."
      ══════════════════════════════════════════════ -->
@@ -606,7 +533,7 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
             Sugerencia: imagen de equipo Tribu, slide de metodología,
             o captura de resultados / dashboard de cliente.
           -->
-          <img src="tribu-metodologia.png" alt="Metodología Tribu Emprendedores" style="width:100%; height:auto; border-radius:var(--radius); display:block;">
+          <img src="tribu-metodologia.webp" alt="Metodología Tribu Emprendedores" style="width:100%; height:auto; border-radius:var(--radius); display:block;" width="540" height="432" loading="lazy">
         </div>
       </div>
 
@@ -615,19 +542,16 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
           <span class="step-num">01 — Estrategia</span>
           <h3>Entendemos tu empresa 🔎</h3>
           <p>Análisis profundo de cómo trabaja tu negocio para identificar dónde la IA puede tener impacto real en resultados.</p>
-          <a href="https://tribuemprendedores.com/web/metodologia-de-implementacion-tribu.html" class="step-link" target="_blank" data-term="step_estrategia">Leer más →</a>
         </div>
         <div class="step-card">
           <span class="step-num">02 — Validación</span>
           <h3>Identificamos oportunidades ⚡</h3>
           <p>Plan claro y priorizado. Validamos el valor antes de escalar la inversión en tecnología.</p>
-          <a href="https://tribuemprendedores.com/web/metodologia-de-implementacion-tribu.html" class="step-link" target="_blank" data-term="step_validacion">Leer más →</a>
         </div>
         <div class="step-card">
           <span class="step-num">03 — Impacto</span>
           <h3>Construimos a tu medida 📊</h3>
           <p>Tecnología adaptada a tus reglas, tus datos y tus objetivos. Soluciones que se integran a tu operación real.</p>
-          <a href="https://tribuemprendedores.com/web/metodologia-de-implementacion-tribu.html" class="step-link" target="_blank" data-term="step_impacto">Leer más →</a>
         </div>
       </div>
 
@@ -635,23 +559,122 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
       <div class="purple-banner">
         <h2 class="banner-title">Lleva la IA más allá del chat</h2>
         <p class="banner-sub">
-          Descubre cómo Tribu puede integrarse a tus procesos comerciales reales. Visita nuestro sitio web y agenda una demo.
+          Descubre cómo Tribu puede integrarse a tus procesos comerciales reales.
         </p>
-        <a href="https://tribuemprendedores.com/web/#contact" class="banner-btn" target="_blank" data-term="cta">
-          Agenda una demo →
-        </a>
         <div class="banner-pills">
           <span class="banner-pill">Inteligencia Artificial</span>
           <span class="banner-pill">Automatización Comercial</span>
           <span class="banner-pill">Procesos a Medida</span>
           <span class="banner-pill">Resultados Reales</span>
         </div>
-        <p class="banner-url">O visita directamente: <a href="https://tribuemprendedores.com/web/" target="_blank" data-term="banner_url">tribuemprendedores.com</a></p>
+      </div>
+
+      <div style="text-align:center; margin-top:48px;">
+        <a href="#contacto" class="btn-cta-ghost">Hablemos de oportunidades con IA &nbsp;→</a>
       </div>
 
     </div>
   </div>
 </section>
+
+<hr class="divider">
+
+
+<!-- ══════════════════════════════════════════════
+     SECCIÓN 5 — EL EJEMPLO REAL
+     "Por ejemplo: llega un mensaje por WhatsApp..."
+     Flujo completo: contacto → calificación → escalamiento
+     ══════════════════════════════════════════════ -->
+<section id="ejemplo">
+  <div class="page-max">
+    <div class="section">
+      <span class="label-tag">Un ejemplo real</span>
+      <h2 class="section-title">Así se ve en<br>tu proceso comercial</h2>
+      <p class="section-sub">Desde el primer mensaje hasta que tu equipo toma la conversación — con todo el contexto listo.</p>
+
+      <div class="method-split">
+        <div class="method-split-img">
+          <!--
+            IMAGEN SPLIT IZQUIERDA
+            Tamaño ideal: 540 × 520 px (vertical o cuadrada)
+            Sugerencia: diagrama o flujo visual:
+            WhatsApp / redes / web → IA → equipo comercial.
+            Puede ser captura de tus slides o diseño propio.
+          -->
+          <img src="flujo-comercial.webp" alt="Flujo comercial con IA - Tribu" width="540" height="540" loading="lazy">
+        </div>
+        <div class="method-split-cards">
+          <div class="step-card">
+            <span class="step-num">01 — Reglas de negocio</span>
+            <h3>Entiende tus reglas de negocio 🧠</h3>
+            <p>No solo redacta; resuelve consultas transaccionales cómo por ejemplo, duda de tu programa lealtad y puntos al instante (80% de automatización), tal como lo hace el Agente G en el sector gasolinero.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">02 — Captura automática</span>
+            <h3>Elimina la captura manual ⚙️</h3>
+            <p>Estructura datos desde PDFs, Excels o WhatsApp directamente a tu sistema operativo, reduciendo el tiempo de "Data Entry" en un 90% como en el Caso Aduanera.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">03 — Validación operativa</span>
+            <h3>Detecta omisiones al instante 🔎</h3>
+            <p>Identifica automáticamente si falta información en un expediente de comercio exterior y la solicita al cliente, liberando +400 horas al mes como en la Empresa Logística.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-num">04 — Ejecución 24/7</span>
+            <h3>Una extensión de tu equipo 🚀</h3>
+            <p>Deja de ser un "chat de ayuda" para ejecutar acciones 24/7 que garantizan la integridad de la información y aceleran los ciclos de ingreso de tu operación real.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Puente CTA → formulario -->
+<div class="cta-bridge">
+  <p>Tu empresa ya tiene procesos.<br>Solo falta la IA que los amplifique.</p>
+  <a href="#contacto" class="btn-cta-final">
+    Quiero explorar mi caso con Tribu
+    <span class="btn-arrow">
+      <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+        <path d="M2 7h10M7 2l5 5-5 5" stroke="#9747FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </a>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SECCIÓN 6 — FORMULARIO DE CONTACTO
+     ══════════════════════════════════════════════ -->
+<section id="contacto">
+  <div class="page-max">
+    <div class="contacto-split">
+      <div class="contacto-text">
+        <span class="label-tag">Exploración inicial</span>
+        <h2 class="section-title" style="color:#fff; margin-bottom:24px;">Explora una oportunidad<br>real con IA</h2>
+        <p class="contacto-subheading">Cuéntanos tu reto o proyecto</p>
+        <p class="contacto-desc">No necesitas llegar con una solución definida. Platícanos tu contexto y te ayudamos a aterrizar posibles caminos para aplicar IA, automatización o software a la medida en tu empresa.</p>
+      </div>
+      <iframe
+        id="JotFormIFrame-250447313350044"
+        src="https://form.jotform.com/250447313350044"
+        frameborder="0"
+        scrolling="no"
+        allowtransparency="true"
+        allowfullscreen
+        allow="geolocation; microphone; camera"
+        onload="window.parent.scrollTo(0,0)"
+        style="width:100%; height:539px; border:none; background:transparent;"
+        title="Formulario de contacto Tribu"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="post-form-link">
+  O visita directamente: <a href="https://tribuemprendedores.com/web/" target="_blank" data-term="banner_url"><strong>tribuemprendedores.com</strong></a>
+</div>
 
 
 <!-- ── FOOTER ── -->
@@ -671,9 +694,6 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
       <div class="footer-nav-title">Tribu</div>
       <ul class="footer-nav">
         <li><a href="https://tribuemprendedores.com/web/" target="_blank" data-term="footer_sitio">Sitio Web</a></li>
-        <li><a href="https://tribuemprendedores.com/web/metodologia-de-implementacion-tribu.html" target="_blank" data-term="footer_metodologia">Metodología</a></li>
-        <li><a href="https://tribuemprendedores.com/web/tribu-servicio-al-cliente-ai.html" target="_blank" data-term="footer_casos">Casos de Éxito</a></li>
-        <li><a href="https://tribuemprendedores.com/web/" target="_blank" data-term="footer_contacto">Contacto</a></li>
       </ul>
     </div>
   </div>
@@ -684,20 +704,6 @@ footer { background: var(--black); color: var(--white); padding: 64px 48px 36px;
 </footer>
 
 <script>
-/* ── HAMBURGUESA ── */
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-});
-mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-    });
-});
-
 /* ── UTMs GLOBALES ──
    Edita solo este objeto y se actualiza en todos los links.
    El utm_term de cada botón se define con data-term="" en el HTML. */
@@ -721,6 +727,10 @@ function applyUTMs(url, term) {
 document.querySelectorAll('a[data-term]').forEach(link => {
     link.href = applyUTMs(link.href, link.dataset.term);
 });
+</script>
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+<script>
+  window.jotformEmbedHandler("iFrame[id='JotFormIFrame-250447313350044']", "https://www.jotform.com");
 </script>
 </body>
 </html>
